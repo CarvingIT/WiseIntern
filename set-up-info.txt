@@ -1,0 +1,26 @@
+1. Clone the project
+
+	$ git clone http://git_repository_url
+
+2. Set up your document root to public/ 
+
+If you are using Apache/Nginx or any other web server, create a virtual host.
+Think of using a name like wiseintern.local
+You will need to add an entry in your /etc/hosts file for this to work.
+
+3. Install dependencies
+
+	$ cd project_directory
+	$ composer install
+
+4. Create a database, user and grant privileges
+
+Sample commands
+	mysql > create database database_name;
+	mysql > grant all privileges on database_name.* to database_user@localhost identified by 'user_password';
+
+5. Copy .env.example as .env and update database credentials.
+
+6. Run migrations (with seeders)
+
+	$ php artisan migrate:fresh --seed
