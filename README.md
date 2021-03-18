@@ -15,6 +15,6 @@ Laravel (Jetstream)
 
 # Guidelines for naming your branches
 
-feature/short-feature-name - if you have worked on a feature.
+feature/short-feature-name - when you work on a feature.
 
-bugfix/short-bug-description if you worked on fixing a bug.
+bugfix/short-bug-description when you work on fixing a bug.
