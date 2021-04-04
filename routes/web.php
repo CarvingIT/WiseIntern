@@ -25,6 +25,4 @@ Route::get('/usermanagement', function () {
     return view('usermanagement');
 });
 
-Route::get('/wiseintern', function () {
-    return view('wiseintern');
-});
+
