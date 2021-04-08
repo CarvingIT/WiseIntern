@@ -2521,7 +2521,7 @@ ul.breadcrumb li a:hover {
 
 			input[type="button"],
 			input[type="submit"],
-			input[type="reset"],
+			input[type="reset"]
 			{
 				width: 100%;
 				text-align: center;
@@ -2678,7 +2678,7 @@ ul.breadcrumb li a:hover {
 						height: 38px;
 						border-radius: 6px;
 						content: '\f0c9';
-						color: #fff;
+						color:#fff;
 						text-align: center;
 						line-height: 38px;
 						font-size: 20px;
@@ -3023,3 +3023,4 @@ ul.breadcrumb li a:hover {
 			}
 
 	}
+}
