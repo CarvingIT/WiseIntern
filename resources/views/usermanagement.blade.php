@@ -1,20 +1,18 @@
 @push('head')
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-@endpush
-@push('head')
+
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-@endpush
-@push('head')
-@end('head')
+
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-@endpush
-@push('head')
+<script src="https://kit.fontawesome.com/e3dc723f7b.js" crossorigin="anonymous"></script>
+
 <script>
     $(document).ready(function() {
     $('#users').DataTable( {
         "columnDefs": [{
             "targets":[3],
-            "orderable":false
+            "orderable":false,
+            "className":"text-right",
         }]
     } );
 } );
@@ -46,61 +44,61 @@
                     <td>John</td>
                     <td>John@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td> 
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
                 <tr>
                     <td>Nick</td>
                     <td>Nick@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>   
                 </tr>
                 <tr>
                     <td>Neha</td>
                     <td>Neha@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td> 
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
                 <tr>
                     <td>Riya</td>
                     <td>Riya@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td> 
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
                 <tr>
                     <td>Siya</td>
                     <td>Siya@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
                 </tr>
                 <tr>
                     <td>Eva</td>
                     <td>Eva@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
                 </tr>
                 <tr>
                     <td>Maria</td>
                     <td>Maria@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
                 </tr>
                 <tr>
                     <td>Rahul</td>
                     <td>Rahul@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
                 <tr>
                     <td>Rohit</td>
                     <td>Rohit@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
                 <tr>
                     <td>Rohan</td>
                     <td>Rohan@gmail.com</td>
                     <td>07-04-2021</td>
-                    <td><a href="#">Edit</a> <a href="#">Delete</a></td>  
+                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
                 </tr>
             </tbody>
         </table>
