@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
 <script src="https://kit.fontawesome.com/e3dc723f7b.js" crossorigin="anonymous"></script>
 
 <script>
