@@ -24,5 +24,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/usermanagement', function () {
     return view('usermanagement');
 });
+Route::get('/wiseintern', function () {
+    return view('layouts.wiseintern');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 
