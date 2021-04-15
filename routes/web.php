@@ -27,4 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
