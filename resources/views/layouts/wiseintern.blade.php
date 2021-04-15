@@ -22,7 +22,7 @@
                     <ul>
 			            <li><a href="projects.html">Projects</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact">Contact</a></li>
                         <li><a href="#">Login</a></li>
                         <li><a href="#" class="button-solid">Signup</a></li>
                     </ul>
