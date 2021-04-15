@@ -60,12 +60,12 @@ class User extends Authenticatable
     ];
 
     public function roles(){
-        return $this->hasMany('App\UserRole');
+        return $this->hasMany('App\Models\UserRole');
     }
 
     public function hasRole($role_name){
         $roles = $this->roles()->get();
-        $role = \App\Role::where('name',$role_name)->first();
+        $role = \App\Models\Role::where('name',$role_name)->first();
         $role_id = null;
         if($role){
             $role_id = $role->id;
