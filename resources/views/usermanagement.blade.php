@@ -1,12 +1,8 @@
 @push('head')
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-
 <script src="https://kit.fontawesome.com/e3dc723f7b.js" crossorigin="anonymous"></script>
-
 <script>
     $(document).ready(function() {
     $('#users').DataTable( {
@@ -20,7 +16,6 @@
 </script>
 @endpush
 
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -31,7 +26,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-        <table id="users">
+		<div class="p-6 sm:px-20 bg-white border-b border-gray-200">
+		<div class="mt-6 text-gray-900">
+		<div class="table-responsive">
+        <table id="users" class="display">
             <thead>
                 <tr>
                     <th>NAME</th>
@@ -103,6 +101,9 @@
                 </tr>
             </tbody>
         </table>
+		</div><!-- table-responsive -->
+		</div><!-- mt-6 -->
+		</div><!-- p-6 -->
     </div>
 </div>
 </div>
