@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
-});
+})->middleware('admin');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
