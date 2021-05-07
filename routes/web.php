@@ -21,6 +21,10 @@ Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
 })->middleware('admin');
 
+Route::get('/admin/projectlists', function () {
+    return view('projectlists');
+})->middleware('admin');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
