@@ -21,7 +21,7 @@ Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
 })->middleware('admin');
 
-Route::get('/admin/projectlists', function () {
+Route::get('/admin/projects', function () {
     return view('projectlists');
 })->middleware('admin');
 
