@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-8 lg:px-10 ">
             <div class="overflow-hidden shadow-xl sm:rounded-lg">
             <div class="w-full max-w-xs">
-</div>
+                </div>
 
             <form class="bg-white rounded px-8 pt-6 pb-8 mb-4 align=center w-full ">
     <div class="mb-4">
