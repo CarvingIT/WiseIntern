@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/usermanagement', function () {
+/*Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
-})->middleware('admin');
+})->middleware('admin');*/
 
+Route::get('/admin/usermanagement',['UserController'::class,'index'])->middleware('admin');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
 
 
 Route::get('/contact', function () {

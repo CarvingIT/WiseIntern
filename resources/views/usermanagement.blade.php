@@ -30,76 +30,22 @@
 		<div class="mt-6 text-gray-900">
 		<div class="table-responsive">
         <table id="users" class="display">
-            <thead>
-                <tr>
-                    <th>NAME</th>
-                    <th>EMAIL ADDRESS</th>
-                    <th>REGISTRATION DATE</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>John@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Nick</td>
-                    <td>Nick@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>   
-                </tr>
-                <tr>
-                    <td>Neha</td>
-                    <td>Neha@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Riya</td>
-                    <td>Riya@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Siya</td>
-                    <td>Siya@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Eva</td>
-                    <td>Eva@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Maria</td>
-                    <td>Maria@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Rahul</td>
-                    <td>Rahul@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Rohit</td>
-                    <td>Rohit@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Rohan</td>
-                    <td>Rohan@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-            </tbody>
+            <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Registration</td>
+            <td>Actions</td>
+            </tr>
+            @foreach ($users as $user)
+            <tr>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->created_at }}</td>
+            <td>{{ $user->updated_at }}</td>
+            </tr>
+            @endforeach
         </table>
 		</div><!-- table-responsive -->
 		</div><!-- mt-6 -->
