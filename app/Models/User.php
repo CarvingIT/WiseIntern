@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Http\Controllers\UserController;
+
+
 
 class User extends Authenticatable
 {
@@ -76,4 +79,6 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    
 }
