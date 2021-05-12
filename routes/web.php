@@ -25,7 +25,7 @@ Route::get('/admin/projects', function () {
     return view('projectlists');
 })->middleware('admin');
 
-Route::get('/admin/projectform', function () {
+Route::get('/admin/project/new', function () {
     return view('projectform');
 })->middleware('admin');
 
