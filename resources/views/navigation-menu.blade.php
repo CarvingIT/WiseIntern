@@ -12,8 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->is('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('/admin/usermanagement') }}" :active="request()->is('/admin/usermanagement')">
+                        {{ __('User Management') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('/admin/projects') }}" :active="request()->is('/admin/projects')">
+                        {{ __('Project Lists') }}
                     </x-jet-nav-link>
                 </div>
             </div>
