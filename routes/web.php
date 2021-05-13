@@ -32,7 +32,7 @@ Route::get('/admin/projects', function () {
 })->middleware('admin');
 
 Route::get('/admin/projects/new', function () {
-    return view('projetform');
+    return view('projectform');
 })->middleware('admin');
 
 
