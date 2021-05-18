@@ -1,7 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <!-- Logo -->
+                <div id="logo">
+                    <a href="index.html"><img src="/images/wise-intern-logo.png" width="103" height="49" alt="Wise Intern"/></a>
+                </div>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
