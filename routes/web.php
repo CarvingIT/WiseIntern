@@ -35,4 +35,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::view('Adminform','Adminform');
+	Route::post('formsubmit','App\Http\Controllers\form@save');
+	//Route::post('formsubmit','App\Http\Controllers\form@index');
 
