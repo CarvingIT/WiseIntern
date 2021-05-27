@@ -39,66 +39,14 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($users as $user)
                 <tr>
-                    <td>John</td>
-                    <td>John@gmail.com</td>
-                    <td>07-04-2021</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at }}</td>
                     <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
                 </tr>
-                <tr>
-                    <td>Nick</td>
-                    <td>Nick@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>   
-                </tr>
-                <tr>
-                    <td>Neha</td>
-                    <td>Neha@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Riya</td>
-                    <td>Riya@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Siya</td>
-                    <td>Siya@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Eva</td>
-                    <td>Eva@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Maria</td>
-                    <td>Maria@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
-                <tr>
-                    <td>Rahul</td>
-                    <td>Rahul@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Rohit</td>
-                    <td>Rohit@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td> 
-                </tr>
-                <tr>
-                    <td>Rohan</td>
-                    <td>Rohan@gmail.com</td>
-                    <td>07-04-2021</td>
-                    <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>  
-                </tr>
+                @endforeach
             </tbody>
         </table>
 		</div><!-- table-responsive -->
@@ -108,4 +56,3 @@
 </div>
 </div>
 </x-app-layout>
-
