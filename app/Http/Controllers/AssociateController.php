@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Associate;
 
-class form extends Controller
+class AssociateController extends Controller
 {
         function index(Request $request){
 	return $request->post();
@@ -28,6 +28,7 @@ class form extends Controller
 		$data->phone1=$req->phone1;
 		$data->phone2=$req->phone2;
 		$data->save();
+		echo "Data submitted";
 	}
 		
 

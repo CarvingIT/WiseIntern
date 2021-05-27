@@ -35,7 +35,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::view('Adminform','Adminform');
-	Route::post('formsubmit','App\Http\Controllers\form@save');
+Route::view('associate-form','associate-form')->middleware('admin');
+	Route::post('formsubmit','App\Http\Controllers\AssociateController@save')->middleware('admin');
 	//Route::post('formsubmit','App\Http\Controllers\form@index');
 

@@ -1,10 +1,13 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Associate Form') }}
+        </h2>
+    </x-slot>
+	<div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+    
 
 <form method="post" action="formsubmit">
 {{@csrf_field()}}
@@ -21,13 +24,16 @@
 		</span>
 <div>
                 <x-jet-label for="type" value="{{ __('Associate Type') }}" />
-                <x-jet-input id="type" class="block mt-1 w-full" type="text" name="type" :value="old('type')" required autofocus autocomplete="name" />
-            </div>
+           <select id="type" name="type">
+  <option value="individual" >Individual</option>
+  <option value="company" >Company</option>
+  </select>
+  </div>
 
 
             <div>
                 <x-jet-label for="address" value="{{ __('Address') }}" />
-                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="name" />
             </div>
 
 		<span class="field_error">
@@ -73,5 +79,7 @@
 <style>
 .field_error{color:red;}
 </style>
-    </x-jet-authentication-card>
-</x-guest-layout>
+</div>
+        </div>
+    </div>
+  </x-app-layout>
