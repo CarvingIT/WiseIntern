@@ -1,10 +1,6 @@
 <?php
-namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\UserController;
 
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,18 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/admin/usermanagement', function () {
+Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
-})->middleware('admin');*/
-
-Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
+})->middleware('admin');
 
 Route::get('/admin/projects', function () {
     return view('projectlists');
-})->middleware('admin');
-
-Route::get('/admin/projects/new', function () {
-    return view('projectform');
 })->middleware('admin');
 
 
