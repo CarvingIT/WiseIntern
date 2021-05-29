@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/admin/usermanagement', function () {
+Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
-})->middleware('admin');*/
+})->middleware('admin');
 
 Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
 
