@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
     
 
-<form method="post" action="formsubmit">
+<form method="post" action="save-associate">
 {{@csrf_field()}}
 
             <div>
