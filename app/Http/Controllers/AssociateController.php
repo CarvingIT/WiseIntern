@@ -8,14 +8,15 @@ use App\Models\Associate;
 class AssociateController extends Controller
 {
         function index(Request $request){
-	return $request->post();
+	/*return $request->post();
 	$request->validate([
 	'name'=>'required',
 	'email'=>'required|email',
 	'address'=>'required',
 	'phone1'=>'required',
 	'phone2'=>'required'
-	]);
+	]);*/
+				return Associate::all();
 		}
 		
 	function save(Request $req){
@@ -28,7 +29,7 @@ class AssociateController extends Controller
 		$data->phone1=$req->phone1;
 		$data->phone2=$req->phone2;
 		$data->save();
-		echo "Data submitted";
+		return redirect('admin/associate-form');
 	}
 		
 
