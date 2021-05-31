@@ -20,6 +20,11 @@ Route::get('/', function () {
 Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
 })->middleware('admin');
+<<<<<<< HEAD
+=======
+
+Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
+>>>>>>> main
 
 Route::get('/admin/projects', function () {
     return view('projectlists');
