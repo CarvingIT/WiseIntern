@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\UserController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,18 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/admin/usermanagement', function () {
+Route::get('/admin/usermanagement', function () {
     return view('usermanagement');
-})->middleware('admin');*/
+})->middleware('admin');
 
 Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
 
+
 Route::get('/admin/projects', function () {
     return view('projectlists');
-})->middleware('admin');
-
-Route::get('/admin/projects/new', function () {
-    return view('projectform');
 })->middleware('admin');
 
 
@@ -45,4 +41,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::view('admin/associate-form','associate-form')->middleware('admin');
+	Route::post('/admin/save-associate','App\Http\Controllers\AssociateController@save')->middleware('admin');
+	Route::get('/admin/associates-list','App\Http\Controllers\AssociateController@index')->middleware('admin');
 
