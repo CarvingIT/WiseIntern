@@ -21,6 +21,15 @@ class AssociateController extends Controller
 		
 	function save(Request $req){
 		//print_r($req->input());
+		$req->validate([
+		'name'=>'required',
+		'address'=>'required',
+		'email'=>'required|email',
+		'phone1'=>'required',
+		'phone2'=>'required'
+		]);
+		
+		
 		$data=new Associate;
 		$data->name=$req->name;
 		$data->type=$req->type;
@@ -29,6 +38,7 @@ class AssociateController extends Controller
 		$data->phone1=$req->phone1;
 		$data->phone2=$req->phone2;
 		$data->save();
+				
 		return redirect('admin/associate-form');
 	}
 		

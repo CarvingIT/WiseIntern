@@ -31,6 +31,10 @@ Route::get('/admin/projects', function () {
     return view('projectlists');
 })->middleware('admin');
 
+Route::get('/admin/projects/new', function () {
+    return view('projectform');
+})->middleware('admin');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -40,6 +44,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+
 
 Route::view('admin/associate-form','associate-form')->middleware('admin');
 	Route::post('/admin/save-associate','App\Http\Controllers\AssociateController@save')->middleware('admin');
