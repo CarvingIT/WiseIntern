@@ -12,12 +12,13 @@
 
 <form class="bg-white rounded px-8 pt-6 pb-8 mb-4 align=center w-full " method="post" action="/admin/save-associate">
 {{@csrf_field()}}
+	{{method_field('PATCH')}}
 
 <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="name" >
         Name
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Name" required autofocus autocomplete="name">
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" value="@if(isset($associates->name)){{$associates->name}}@endif" placeholder="Name" required autofocus autocomplete="name">
     	</div>
 		<span class="field_error">
 		@error('name')
@@ -41,7 +42,7 @@
 			<label class="block text-gray-700 text-sm font-bold mb-2" for="address">
 				Address
              </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" name="address" placeholder="Address" required autofocus autocomplete="address">
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" name="address" value="" placeholder="Address" required autofocus autocomplete="address">
             </div>
 		<span class="field_error">
 		@error('address')
@@ -54,7 +55,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
 			Email
 			</label>
-		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" name="email"  placeholder="Email" required autofocus autocomplete="email">
+		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" name="email" value="" placeholder="Email" required autofocus autocomplete="email">
 		</div>		
 		<span class="field_error">
 		@error('email')
@@ -67,7 +68,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="phone1">
 			Phone1
           </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone1" type="text" name="phone1" placeholder="Phone1" required autofocus autocomplete="phone1">
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone1" type="text" name="phone1" value="" placeholder="Phone1" required autofocus autocomplete="phone1">
     		</div>
 		<span class="field_error">
 		@error('phone1')
@@ -80,7 +81,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="phone2">
 			Phone2
 			</label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone2" type="text" name="phone2"  placeholder="Phone2" required autofocus autocomplete="phone2">
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone2" type="text" name="phone2" value="" placeholder="Phone2" required autofocus autocomplete="phone2">
 			</div>
 	<span class="field_error">
 		@error('phone2')
