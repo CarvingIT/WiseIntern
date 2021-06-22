@@ -52,6 +52,7 @@ Route::view('admin/associate-form','associate-form')->middleware('admin');
 	Route::get('/admin/associatelist','App\Http\Controllers\AssociateController@index')->middleware('admin');
 Route::get('/admin/delete/{id}','App\Http\Controllers\AssociateController@delete')->middleware('admin');
 Route::get('/admin/associate-form/{id}','App\Http\Controllers\AssociateController@edit')->middleware('admin');
+Route::post('/admin/edit-associate','App\Http\Controllers\AssociateController@update')->middleware('admin');
 Route::get('/admin/associate-view', function () {
     return view('associate-view');
 })->middleware('admin');

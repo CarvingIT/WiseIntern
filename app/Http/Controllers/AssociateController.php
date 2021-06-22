@@ -47,17 +47,30 @@ public	function save(Request $req){
 		
 		public function edit($id){
 			//$data1=Associate::find($id);
-			//return view('associate-form',['associates'=>$data1]);
+			//return view('associate-form',['data'=>$data1]);
 			if($id == 'new'){
             $user = new Associate();
         }
         else{
             $user = Associate::find($id);
         }
-        
+        print_r($user); exit;
         return view('associate-form', ['associates'=>$user ]);
+		
         }
-
+		/*function update(Request $req1){
+			$data2=Associate::find($id);
+			$data2->name=$req->name;
+		$data2->type=$req->type;
+		$data2->address=$req->address;
+		$data2->email=$req->email;
+		$data2->phone1=$req->phone1;
+		$data2->phone2=$req->phone2;
+		$data2->save();
+		return redirect('admin/associatelist');
+			
+			
+		}*/
 			
 				
 		
