@@ -41,7 +41,7 @@ public	function save(Request $req){
 		$data->phone2=$req->phone2;
 		$data->save();
 				
-		return redirect('admin/associate-form');
+		return redirect('admin/associatelist');
 	}
 		
 		
@@ -50,41 +50,42 @@ public	function save(Request $req){
 			//return view('associate-form',['data'=>$data1]);
 			if($id == 'new'){
             $user = new Associate();
+		   
         }
         else{
             $user = Associate::find($id);
         }
-        print_r($user); exit;
-        return view('associate-form', ['associates'=>$user ]);
+       // print_r($user); exit;
+        return view('associate-form', ['user'=>$user ]);
 		
         }
-		/*function update(Request $req1){
-			$data2=Associate::find($id);
-			$data2->name=$req->name;
-		$data2->type=$req->type;
-		$data2->address=$req->address;
-		$data2->email=$req->email;
-		$data2->phone1=$req->phone1;
-		$data2->phone2=$req->phone2;
-		$data2->save();
-		return redirect('admin/associatelist');
-			
-			
-		}*/
 			
 				
 		
-		 function delete($id){
+		/* function delete($id){
 		
 			$data2=Associate::find($id);
 			$data2->delete();
 			return redirect('/admin/associatelist');
-		}
+		}*/
 		
-		function show($id){
-			$data3=Associate::find($id);
-			
-			
+		public function delete(Request $request){
+	$user = Associate::find($request->id);
+	  if(!empty($user)){
+		if($user->delete()){
+                Session::flash('alert-success', 'Person deleted successfully!');
+                return redirect('/admin/associatelist');
+                }
+	  }	
+	}
+
+		
+	public	function show($id){
+		
+			$user = Associate::find($id);
+        
+        //print_r($user); exit;
+        return view('associate-view', ['user'=>$user ]);
 			
 		
 		}

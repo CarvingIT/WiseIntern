@@ -47,12 +47,13 @@ Route::get('/contact', function () {
 
 
 
-Route::view('admin/associate-form','associate-form')->middleware('admin');
+//Route::view('admin/associate-form/new','associate-form')->middleware('admin');
 	Route::post('/admin/save-associate','App\Http\Controllers\AssociateController@save')->middleware('admin');
 	Route::get('/admin/associatelist','App\Http\Controllers\AssociateController@index')->middleware('admin');
-Route::get('/admin/delete/{id}','App\Http\Controllers\AssociateController@delete')->middleware('admin');
+//Route::get('/admin/delete/{id}','App\Http\Controllers\AssociateController@delete')->middleware('admin');
+Route::post('/admin/associate/delete','App\Http\Controllers\AssociateController@delete')->middleware('admin');
 Route::get('/admin/associate-form/{id}','App\Http\Controllers\AssociateController@edit')->middleware('admin');
-Route::post('/admin/edit-associate','App\Http\Controllers\AssociateController@update')->middleware('admin');
-Route::get('/admin/associate-view', function () {
-    return view('associate-view');
-})->middleware('admin');
+//Route::view('admin/associate-view/','associate-view')->middleware('admin');
+Route::get('/admin/associate-view/{id}','App\Http\Controllers\AssociateController@show')->middleware('admin');
+
+
