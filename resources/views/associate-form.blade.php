@@ -6,36 +6,44 @@
     </x-slot>
 	<div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-    
+		<div class="overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="w-full max-w-xs">
+</div> 
 
-<form method="post" action="save-associate">
+<form class="bg-white rounded px-8 pt-6 pb-8 mb-4 align=center w-full " method="post" action="/admin/save-associate">
 {{@csrf_field()}}
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
+	
+<input type="hidden" name="id" value="{{$user->id}}" />
+<div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="name" >
+        Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" value="@if(!empty($user->id)){{$user->name}}@endif" placeholder="Name" required autofocus autocomplete="name">
+    	</div>
 		<span class="field_error">
 		@error('name')
 		{{$message}}
 		@enderror
 		</span>
-<div>
-                <x-jet-label for="type" value="{{ __('Associate Type') }}" />
-           <select id="type" name="type">
-  <option value="individual" >Individual</option>
-  <option value="company" >Company</option>
+		
+			
+			<div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+        Associate Type
+      </label>
+           <select id="type" name="type" >
+  <option value="Individual" >Individual</option>
+  <option value="Company" >Company</option>
   </select>
   </div>
 
 
             <div>
-                <x-jet-label for="address" value="{{ __('Address') }}" />
-                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="name" />
+			<label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+				Address
+             </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" name="address" value="@if(!empty($user->id)){{$user->address}}@endif" placeholder="Address" required autofocus autocomplete="address">
             </div>
-
 		<span class="field_error">
 		@error('address')
 		{{$message}}
@@ -43,36 +51,53 @@
 		</span>
 
         
-<div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+			<div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+			Email
+			</label>
+		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" name="email" value="@if(!empty($user->id)){{$user->email}}@endif" placeholder="Email" required autofocus autocomplete="email">
+		</div>		
 		<span class="field_error">
 		@error('email')
 		{{$message}}
 		@enderror
 		</span>
-            <div>
-                <x-jet-label for="phone1" value="{{ __('Phone1') }}" />
-                <x-jet-input id="phone1" class="block mt-1 w-full" type="text" name="phone1" :value="old('phone1')" required autofocus autocomplete="name" />
-            </div>
+		
+            
+			<div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone1">
+			Phone1
+          </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone1" type="text" name="phone1" value="@if(!empty($user->id)){{$user->phone1}}@endif" placeholder="Phone1" required autofocus autocomplete="phone1">
+    		</div>
 		<span class="field_error">
 		@error('phone1')
 		{{$message}}
 		@enderror
 		</span>
-<div>
-                <x-jet-label for="phone2" value="{{ __('Phone2') }}" />
-                <x-jet-input id="phone2" class="block mt-1 w-full" type="text" name="phone2" :value="old('phone2')" required autofocus autocomplete="name" />
-            </div>
+		
+			
+			<div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone2">
+			Phone2
+			</label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone2" type="text" name="phone2" value="@if(!empty($user->id)){{$user->phone2}}@endif" placeholder="Phone2" required autofocus autocomplete="phone2">
+			</div>
 	<span class="field_error">
 		@error('phone2')
 		{{$message}}
 		@enderror
 		</span>
-</br>  <x-jet-button class="ml-4">
-                    {{ __('Submit') }}
-                </x-jet-button>
+	</br>			
+	<div class="inline-flex">
+<div class="flex space-x-4 ...">
+<button type="submit" class="bg-blue-600 text-blue-100 text-lg rounded hover:bg-blue-500 px-6 py-3 focus:outline-none">Submit</button>
+      
+
+    </div>
+</div>
+
+
 
 </form>
 
