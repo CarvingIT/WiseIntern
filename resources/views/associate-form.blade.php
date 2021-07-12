@@ -32,8 +32,8 @@
         Associate Type
       </label>
            <select id="type" name="type" >
-  <option value="Individual" >Individual</option>
-  <option value="Company" >Company</option>
+  <option value="Individual" @if($user->type == 'Individual') selected @endif>Individual</option>
+  <option value="Company" @if($user->type == 'Company') selected @endif>Company</option>
   </select>
   </div>
 

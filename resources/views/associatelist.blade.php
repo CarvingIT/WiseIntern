@@ -1,5 +1,6 @@
 @stack('head')
 @push('head')
+<!--
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="/css/all.min.css" />
@@ -7,6 +8,15 @@
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://kit.fontawesome.com/e3dc723f7b.js" crossorigin="anonymous"></script>
 <script src="/js/jquery-ui.js" defer></script>
+-->
+
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" href="/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="/css/jquery-ui.css" />
+<script src="/js/jquery-3.5.1.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
     $('#associates').DataTable( {
