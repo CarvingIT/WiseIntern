@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Associate;
 use DB;
+use Session;
 
 class AssociateController extends Controller
 {
