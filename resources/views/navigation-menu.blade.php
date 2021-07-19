@@ -18,8 +18,13 @@
                     <x-jet-nav-link href="/admin/usermanagement" :active="request()->is('/admin/usermanagement')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/admin/projects" :active="request()->is('/admin/projects')">
+                    
+					<x-jet-nav-link href="/admin/projects" :active="request()->is('/admin/projects')">
                         {{ __('Projects') }}
+                    </x-jet-nav-link>
+					
+					<x-jet-nav-link href="/admin/associatelist" :active="request()->is('/admin/associatelist')">
+                        {{ __('Associates') }}
                     </x-jet-nav-link>
                 </div>
             </div>
