@@ -19,8 +19,8 @@ class CreateAssociatesTable extends Migration
 		   $table->string('type');
 		   $table->string('address');
 		   $table->string('email');
-		   $table->('phone1');
-		   $table->('phone2');
+		   $table->string('phone1');
+		   $table->string('phone2');
             $table->timestamps();
         });
     }
