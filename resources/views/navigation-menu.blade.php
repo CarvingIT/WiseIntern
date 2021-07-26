@@ -19,7 +19,7 @@
                         {{ __('Users') }}
                     </x-jet-nav-link>
                     
-					<x-jet-nav-link href="/admin/projects" :active="request()->is('/admin/projects')">
+					<x-jet-nav-link href="/admin/projectlists" :active="request()->is('/admin/projectlists')">
                         {{ __('Projects') }}
                     </x-jet-nav-link>
 					

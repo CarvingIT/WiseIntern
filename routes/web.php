@@ -27,13 +27,13 @@ Route::get('/admin/usermanagement', function () {
 Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
 
 
-Route::get('/admin/projects', function () {
+/*Route::get('/admin/projects', function () {
     return view('projectlists');
-})->middleware('admin');
+})->middleware('admin');*/
 
-Route::get('/admin/projects/new', function () {
+/*Route::get('/admin/projects/new', function () {
     return view('projectform');
-})->middleware('admin');
+})->middleware('admin');*/
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -56,4 +56,8 @@ Route::get('/admin/associate-form/{id}','App\Http\Controllers\AssociateControlle
 //Route::view('admin/associate-view/','associate-view')->middleware('admin');
 Route::get('/admin/associate-view/{id}','App\Http\Controllers\AssociateController@show')->middleware('admin');
 
-
+Route::post('/admin/save-project','App\Http\Controllers\ProjectController@save')->middleware('admin');
+Route::get('/admin/projectlists','App\Http\Controllers\ProjectController@index')->middleware('admin');
+Route::get('/admin/project-view/{id}','App\Http\Controllers\ProjectController@show')->middleware('admin');
+Route::get('/admin/projectform/{id}','App\Http\Controllers\ProjectController@edit')->middleware('admin');
+Route::post('/admin/project/delete','App\Http\Controllers\ProjectController@delete')->middleware('admin');
