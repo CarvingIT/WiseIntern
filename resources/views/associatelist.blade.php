@@ -19,7 +19,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#projects').DataTable( {
+    $('#associates').DataTable( {
         "columnDefs": [{
             "targets":[3],
             "orderable":false,
@@ -43,7 +43,7 @@ $("#deletedialog").dialog({
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Project List') }}
+            {{ __('Associates List') }}
         </h2>
     </x-slot>
 	
@@ -66,43 +66,50 @@ $("#deletedialog").dialog({
 		<div class="table-responsive">
 		<div class="row">
                   <div class="col-12 text-right">
-                    <a href="/admin/projectform/new" class="btn btn-sm btn-primary" title="Add New Project"><i class="fa fa-plus" aria-hidden="true"></i></i></a></i></a>
+                    <a href="/admin/associate-form/new" class="btn btn-sm btn-primary" title="Add New Associate"><i class="fa fa-plus" aria-hidden="true"></i></i></a></i></a>
                   </div>
                 </div>
 				</br>
 		
-        <table id="projects" class="display table responsive">
+        <table id="associates" class="display table responsive">
             <thead>
                 <tr>
 					<th>Id</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Address</th>
+					<th>Email</th>
+					<th>Phone1</th>
+					<th>Phone2</th>
                     <th class="text-right">Actions</th>
 
                 </tr>
             </thead>
             <tbody>
-                @foreach($projects as $project)
+                @foreach($associates as $associate)
 				<tr>
-				<td>{{$project->id}}</td>
-				<td>{{$project->title}}</td>
-				<td>{{$project->description}}</td>
+				<td>{{$associate->id}}</td>
+				<td>{{$associate->name}}</td>
+				<td>{{$associate->type}}</td>
+				<td>{{$associate->address}}</td>
+				<td>{{$associate->email}}</td>
+				<td>{{$associate->phone1}}</td>
+				<td>{{$associate->phone2}}</td>
 				<td>
-				<a href="{{"/admin/project-view/".$project['id']}}" ><i class="fa fa-eye" aria-hidden="true"></i></a>
-				<a href="{{"/admin/projectform/".$project['id']}}" ><i class="fa fa-edit" aria-hidden="true"></i></a>
-				<button  id="opener"  onclick=" showDeleteDialog({{$project->id}});"><span class="fas fa-trash-alt"></span></button>
+				<a href="{{"/admin/associate-view/".$associate['id']}}" ><i class="fa fa-eye" aria-hidden="true"></i></a>
+				<a href="{{"/admin/associate-form/".$associate['id']}}" ><i class="fa fa-edit" aria-hidden="true"></i></a>
+				<button  id="opener"  onclick=" showDeleteDialog({{$associate->id}});"><span class="fas fa-trash-alt"></span></button>
 
             <div id="deletedialog" style="display:none;" class="bg-grey">
                 
-                <form name="deletedoc" method="post" action="/admin/project/delete">
+                <form name="deletedoc" method="post" action="/admin/associate/delete">
                 @csrf
 			
-                <input type="hidden" id="delete_id" name="id" value="{{ $project->id }}" />
+                <input type="hidden" id="delete_id" name="id" value="{{ $associate->id }}" />
                         This action can not be undone.
                         <div class="flex items-center justify-end px-4 py-3 sm:px-6">
                         <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 m-1" wire:loading.attr="disabled">Delete</button>
-                        <button type="button" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 m-1" wire:loading.attr="disabled" onclick="document.location='/admin/projectlist/';">Cancel</button>
+                        <button type="button" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 m-1" wire:loading.attr="disabled" onclick="document.location='/admin/associatelist/';">Cancel</button>
                         </div>
                 </form>
 
