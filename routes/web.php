@@ -61,3 +61,7 @@ Route::get('/admin/projectlists','App\Http\Controllers\ProjectController@index')
 Route::get('/admin/project-view/{id}','App\Http\Controllers\ProjectController@show')->middleware('admin');
 Route::get('/admin/projectform/{id}','App\Http\Controllers\ProjectController@edit')->middleware('admin');
 Route::post('/admin/project/delete','App\Http\Controllers\ProjectController@delete')->middleware('admin');
+
+Route::get('/Projects','App\Http\Controllers\ProjectController@view');
+Route::get('/ProjectFrontView/{id}','App\Http\Controllers\ProjectController@Frontshow');
+route::view('/ProjectFrontView','ProjectFrontView');

@@ -20,7 +20,7 @@
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-			            <li><a href="projects.html">Projects</a></li>
+			            <li><a href="Projects">Projects</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact">Contact</a></li>
                         <li><a href="{{route('login')}}">Login</a></li>
