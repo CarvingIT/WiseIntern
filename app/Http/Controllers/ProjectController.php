@@ -20,8 +20,7 @@ class ProjectController extends Controller
 		
 		public function view(){
 				$data= Project::all();
-				//echo $data;
-			
+				
 				return view('/Projects',['projects'=>$data]);
 	
 	
@@ -62,7 +61,7 @@ class ProjectController extends Controller
 			$users = Project::find($id);
         
         //print_r($user); exit;
-        return view('ProjectFrontView', ['users'=>$users ]);
+        return view('ProjectDetails', ['users'=>$users ]);
 	}
 	
 	public function edit($id){
