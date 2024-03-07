@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ Route::get('/admin/usermanagement', function () {
 Route::get('/admin/usermanagement',[UserController::class,'index'])->middleware('admin');
 
 
-Route::get('/admin/projects', function () {
+Route::get('/admin/project', function () {
     return view('projectlists');
 })->middleware('admin');
 
@@ -41,7 +43,11 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+
+
 Route::view('admin/associate-form','associate-form')->middleware('admin');
 	Route::post('/admin/save-associate','App\Http\Controllers\AssociateController@save')->middleware('admin');
 	Route::get('/admin/associates-list','App\Http\Controllers\AssociateController@index')->middleware('admin');
 
+Route::get('/admin/projects', [ProjectController::class, 'index']);
+Route::resource('projects', ProjectController::class);
