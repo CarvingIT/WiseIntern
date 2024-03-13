@@ -22,7 +22,7 @@
             <a class="btn btn-create" href="{{ route('projects.index') }}">
                 <i class="fas fa-arrow-left mr-2"></i> Back
             </a>
-            <h2 class="font-semibold text-lg text-gray-800 leading-tight">Project Management</h2>
+            <h2 class="font-semibold text-lg text-gray-800 leading-tight">Edit Project</h2>
         </div>
     </x-slot>
 
