@@ -14,18 +14,20 @@ class AssociateCompaniesIndividuals extends Migration
     public function up()
     {
         Schema::create('associate_companies_individuals', function (Blueprint $table) {
-            //$table->id();
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name', 100);
             $table->enum('type', ['company', 'individual']);
             $table->string('phone');
-            //$table->binary('logo');
             $table->text('description');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE associate_companies_individuals ADD logo MEDIUMBLOB");
+
+        // Adding the logo column as BLOB after table creation
+        Schema::table('associate_companies_individuals', function (Blueprint $table) {
+            $table->binary('logo')->after('description')->nullable();
+        });
     }
 
     /**
@@ -35,6 +37,7 @@ class AssociateCompaniesIndividuals extends Migration
      */
     public function down()
     {
+        // Dropping the table if it exists
         Schema::dropIfExists('associate_companies_individuals');
     }
 }
