@@ -15,15 +15,15 @@
             <header id="header" class="container">
                 <!-- Logo -->
                 <div id="logo">
-                    <a href="index.html"><img src="/images/wise-intern-logo.png" width="103" height="49" alt="Wise Intern"/></a>
+                    <a href="wiseintern"><img src="/images/wise-intern-logo.png" width="103" height="49" alt="Wise Intern"/></a>
                 </div>
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-			            <li><a href="projects.html">Projects</a></li>
-                        <li><a href="about.html">About</a></li>
+			            <li><a href="myprojects">Projects</a></li>
+                        <li><a href="about">Entities</a></li>
                         <li><a href="contact">Contact</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="login">Login</a></li>
                         <li><a href="#" class="button-solid">Signup</a></li>
                     </ul>
                 </nav>
